@@ -1,7 +1,9 @@
 package android.gdmec.edu.cn.boxuegu;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.gdmec.edu.cn.boxuegu.view.MyInfoView;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +17,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
     private TextView tv_back;
     private TextView tv_main_title;
     private RelativeLayout rl_title_bar;
@@ -143,6 +151,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
     }
 
+    private MyInfoView mMyInfoView;
+
     private void createView(int ViewIndex) {
         switch (ViewIndex){
             case 0:
@@ -153,6 +163,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case 2:
                 //我的界面
+                if (mMyInfoView == null){
+                    mMyInfoView = new MyInfoView(this);
+                    mBodyLayout.addView(mMyInfoView.getView());
+                }else {
+                    mMyInfoView.getView();
+                }
+                mMyInfoView.showView();
                 break;
         }
     }
