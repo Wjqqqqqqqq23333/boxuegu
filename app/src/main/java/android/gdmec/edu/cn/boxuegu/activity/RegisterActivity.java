@@ -65,8 +65,8 @@ public class RegisterActivity extends AppCompatActivity {
                 }else if(TextUtils.isEmpty(pwdAgain)){
                     Toast.makeText(RegisterActivity.this, "请再次输入密码",Toast.LENGTH_SHORT).show();
                     return;
-                }else if(!et_psw.equals(pwdAgain)){
-                    Toast.makeText(RegisterActivity.this, "请输入两次的密码不一样",Toast.LENGTH_SHORT).show();
+                }else if(!psw.equals(pwdAgain)){
+                    Toast.makeText(RegisterActivity.this, "两次的密码不一样",Toast.LENGTH_SHORT).show();
                     return;
                 }else if(isExistUserName(userName)){
                     Toast.makeText(RegisterActivity.this, "此用户名已经存在",Toast.LENGTH_SHORT).show();
@@ -106,7 +106,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void getEditString(){
         userName = et_user_name.getText().toString().trim();
-        psw = et_psw.getText().toString();
+        psw = et_psw.getText().toString().trim();
         pwdAgain = et_psw_again.getText().toString().trim();
     }
 }
