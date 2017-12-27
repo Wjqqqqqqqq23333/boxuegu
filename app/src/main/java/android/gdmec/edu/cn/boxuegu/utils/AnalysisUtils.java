@@ -4,14 +4,13 @@ import android.content.Context;
 import android.content.SharedPreferences;
 
 /**
- * Created by student on 17/12/26.
+ * Created by student on 17/12/27.
  */
 
 public class AnalysisUtils {
     public static String readLoginUserName(Context context){
-        SharedPreferences sp = context.getSharedPreferences("loginInfo", Context.MODE_PRIVATE);
-        String userName = sp.getString("loginUserName", "");
+        SharedPreferences sp = context.getSharedPreferences("loginInfo",Context.MODE_PRIVATE);
+        String userName = sp.getString("loginUserName","");
         return userName;
-
     }
 }
