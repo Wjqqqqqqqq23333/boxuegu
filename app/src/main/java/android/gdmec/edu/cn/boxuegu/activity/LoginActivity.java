@@ -45,14 +45,14 @@ public class LoginActivity extends AppCompatActivity {
         et_psw = (EditText) findViewById(R.id.et_psw);
         tv_back.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 LoginActivity.this.finish();
             }
         });
 
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
                 startActivityForResult(intent, 1);
 
