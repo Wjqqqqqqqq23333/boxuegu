@@ -59,7 +59,7 @@ public class MyInfoView {
 
         ll_head.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View vi ) {
                 if (readLoginStatus()){
 
                 }else {
@@ -69,17 +69,28 @@ public class MyInfoView {
             }
         });
 
-        rl_setting.setOnClickListener(new View.OnClickListener() {
+        rl_course_history.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (readLoginStatus()){
-
+                    //跳转到播放记录
                 }else {
                     Toast.makeText(mContext,"你还未登录,请先登录",Toast.LENGTH_SHORT).show();
                 }
             }
         });
-    }
+
+    rl_setting.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            if (readLoginStatus()){
+                //跳转到设置
+            }else {
+                Toast.makeText(mContext,"你还未登录,请先登录",Toast.LENGTH_SHORT).show();
+            }
+        }
+    });
+}
 
     public void setLoginParams(boolean isLogin) {
         if (isLogin){
@@ -101,4 +112,6 @@ public class MyInfoView {
         }
         mCurrentView.setVisibility(View.VISIBLE);
     }
+
+
 }
