@@ -21,6 +21,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        if (data!=null){
+            boolean isLogin = data.getBooleanExtra("isLogin", false);
+            if (isLogin){//登录成功后显示课程界面
+                clearBottomImageState();
+                selectDisplayView(0);
+            }
+            if (mMyInfoView!=null){
+                mMyInfoView.setLoginParams(isLogin);
+            }
+        }
     }
 
     private TextView tv_back;

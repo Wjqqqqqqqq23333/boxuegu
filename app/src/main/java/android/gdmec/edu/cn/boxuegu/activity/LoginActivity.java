@@ -83,7 +83,7 @@ public class LoginActivity extends AppCompatActivity {
                     Intent data = new Intent();
                     data.putExtra("isLogin", true);
                     setResult(RESULT_OK,data);
-                    //LoginActivity.this.finish();
+                    LoginActivity.this.finish();
                     //跳转到主页，后面再做
                     return;
                 }else if (!TextUtils.isEmpty(spPsw) && !md5Psw.equals(spPsw)){
