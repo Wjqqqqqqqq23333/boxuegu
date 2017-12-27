@@ -12,7 +12,7 @@ public class SQLiteHelper extends SQLiteOpenHelper {
 
     public static final int DB_VERSION = 1;
     public static final String DB_NAME = "bxg.db";
-    private static final String U_USERINFO = "userinfo";
+    public static final String U_USERINFO = "userinfo";
 
     public SQLiteHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
