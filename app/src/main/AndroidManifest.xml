@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="android.gdmec.edu.cn.boxuegu">
+          package="android.gdmec.edu.cn.boxuegu">
 
     <application
         android:allowBackup="true"
@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/app_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name=".MainActivity" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".activity.SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN"/>
 
-                <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".activity.RegisterActivity" />
-        <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.SettingActivity" />
-        <activity android:name=".activity.ModifyPswActivity" />
-        <activity android:name=".activity.FindPswActivity"></activity>
+        <activity android:name=".activity.RegisterActivity"/>
+        <activity android:name=".activity.LoginActivity"/>
+        <activity android:name=".activity.SettingActivity"/>
+        <activity android:name=".activity.UserInfoActivity">
+        </activity>
     </application>
 
 </manifest>
