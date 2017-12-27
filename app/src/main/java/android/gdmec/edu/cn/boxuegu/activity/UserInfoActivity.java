@@ -25,6 +25,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private TextView tv_nickName;
     private RelativeLayout rl_nickName;
     private String spUserName;
+    private TextView tv_back;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,15 +39,16 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     }
 
     private void setLinstener() {
-        tv_nickName.setOnClickListener(this);
+        tv_back.setOnClickListener(this);
+        rl_nickName.setOnClickListener(this);
         tv_user_name.setOnClickListener(this);
-        tv_sex.setOnClickListener(this);
-        tv_signature.setOnClickListener(this);
+        rl_sex.setOnClickListener(this);
+        rl_signature.setOnClickListener(this);
     }
 
 
     private void init() {
-        TextView tv_back = (TextView) findViewById(R.id.tv_back);
+        tv_back = (TextView) findViewById(R.id.tv_back);
         TextView tv_main_title = (TextView) findViewById(R.id.tv_main_title);
         tv_main_title.setText("个人资料");
         RelativeLayout rl_title_bar = (RelativeLayout) findViewById(R.id.title_bar);
@@ -129,6 +131,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 setSex(items[which]);
             }
         });
+        builder.show();
     }
 
     //更新界面上的性别数据

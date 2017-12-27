@@ -7,12 +7,14 @@ import android.content.SharedPreferences;
 import android.gdmec.edu.cn.boxuegu.R;
 import android.gdmec.edu.cn.boxuegu.activity.LoginActivity;
 import android.gdmec.edu.cn.boxuegu.activity.SettingActivity;
+import android.gdmec.edu.cn.boxuegu.activity.UserInfoActivity;
 import android.gdmec.edu.cn.boxuegu.utils.AnalysisUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
+import android.widget.StackView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,7 +66,8 @@ public class MyInfoView {
             @Override
             public void onClick(View view) {
                 if (readLoginStatus()){
-
+                    Intent intent = new Intent(mContext, UserInfoActivity.class);
+                    mContext.startActivity(intent);
                 }else {
                     Intent intent = new Intent(mContext, LoginActivity.class);
                     ((Activity) mContext).startActivityForResult(intent,1);
