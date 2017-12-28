@@ -1,8 +1,8 @@
-package android.gdmec.edu.cn.boxuegu.activity;
+package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.gdmec.edu.cn.boxuegu.utils.MD5Utils;
+import cn.edu.gdmec.android.boxuegu.utils.MD5Utils;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

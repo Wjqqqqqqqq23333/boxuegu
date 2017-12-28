@@ -1,11 +1,11 @@
-package android.gdmec.edu.cn.boxuegu.utils;
+package cn.edu.gdmec.android.boxuegu.utils;
 
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.gdmec.edu.cn.boxuegu.bean.UserBean;
-import android.gdmec.edu.cn.boxuegu.sqlite.SQLiteHelper;
+import cn.edu.gdmec.android.boxuegu.bean.UserBean;
+import cn.edu.gdmec.android.boxuegu.sqlite.SQLiteHelper;
 
 /**
  * Created by student on 17/12/27.
