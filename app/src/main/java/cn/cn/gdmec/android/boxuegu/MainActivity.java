@@ -1,11 +1,11 @@
-package cn.edu.gdmec.android.boxuegu;
+package cn.cn.gdmec.android.boxuegu;
 
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.gdmec.edu.cn.boxuegu.R;
 
-import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
+import cn.cn.gdmec.android.boxuegu.view.MyInfoView;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

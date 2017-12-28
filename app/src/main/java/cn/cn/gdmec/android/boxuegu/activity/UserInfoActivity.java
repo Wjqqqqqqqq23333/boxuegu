@@ -1,10 +1,10 @@
-package cn.edu.gdmec.android.boxuegu.activity;
+package cn.cn.gdmec.android.boxuegu.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import cn.edu.gdmec.android.boxuegu.bean.UserBean;
-import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
-import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
+import cn.cn.gdmec.android.boxuegu.bean.UserBean;
+import cn.cn.gdmec.android.boxuegu.utils.AnalysisUtils;
+import cn.cn.gdmec.android.boxuegu.utils.DBUtils;
 import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
