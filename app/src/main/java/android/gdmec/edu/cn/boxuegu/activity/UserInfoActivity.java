@@ -2,6 +2,7 @@ package android.gdmec.edu.cn.boxuegu.activity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.gdmec.edu.cn.boxuegu.bean.UserBean;
 import android.gdmec.edu.cn.boxuegu.utils.AnalysisUtils;
 import android.gdmec.edu.cn.boxuegu.utils.DBUtils;
@@ -10,6 +11,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.gdmec.edu.cn.boxuegu.R;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -27,6 +29,10 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
     private String spUserName;
     private TextView tv_back;
 
+    private static final int CHANGE_NICKNAME = 1;//修改呢称的自定义常量
+    private static final int CHANGE_SIGNATURE = 2;//修改签名的自定义常量
+    private String new_info;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +42,12 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         init();
         initDate();
         setLinstener();
+    }
+
+    public void enterActivityForResult(Class<?> to,int requestCode,Bundle b){
+        Intent i=new Intent(this,to);
+        i.putExtras(b);
+        startActivityForResult(i,requestCode);
     }
 
     private void setLinstener() {
@@ -99,15 +111,56 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 this.finish();
                 break;
             case R.id.rl_nickName://呢称的点击事件
+                String name = tv_nickName.getText().toString();
+                Bundle bdName = new Bundle();
+                bdName.putString("content",name);//传递界面上的呢称数据
+                bdName.putString("title","呢称");
+                bdName.putInt("flag",1);//flag为1表示是修改呢称
+                enterActivityForResult(ChangeUserInfoActivity.class, CHANGE_NICKNAME,bdName);
                 break;
             case R.id.rl_sex:
                 String sex = tv_sex.getText().toString();
                 sexDialog(sex);
                 break;
             case R.id.rl_signature://签名的点击事件
+                String signature = tv_signature.getText().toString();
+                Bundle bdSignature = new Bundle();
+                bdSignature.putString("content",signature);//传递界面上的呢称数据
+                bdSignature.putString("title","签名");
+                bdSignature.putInt("flag",2);//flag为1表示是修改呢称
+                enterActivityForResult(ChangeUserInfoActivity.class, CHANGE_SIGNATURE,bdSignature);
                 break;
             default:
                     break;
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case CHANGE_NICKNAME:
+                if (data!=null){
+                    new_info = data.getStringExtra("nickName");
+                    if (TextUtils.isEmpty(new_info)){
+                        return;
+                    }
+                    tv_nickName.setText(new_info);
+                    //更新数据库中的呢称
+                    DBUtils.getInstance(UserInfoActivity.this).updateUserInfo("nickName", new_info,spUserName);
+                }
+                break;
+            case CHANGE_SIGNATURE:
+                if (data!=null){
+                    new_info = data.getStringExtra("signature");
+                    if (TextUtils.isEmpty(new_info)){
+                        return;
+                    }
+                    tv_signature.setText(new_info);
+                    //更新数据库中的签名
+                    DBUtils.getInstance(UserInfoActivity.this).updateUserInfo("signature", new_info,spUserName);
+                }
+                break;
         }
     }
 
