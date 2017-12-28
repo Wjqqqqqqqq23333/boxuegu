@@ -24,9 +24,7 @@ import android.widget.Toast;
 
 public class MyInfoView {
 
-    private Context mContext;
-
-
+    private Activity mContext;
     private final LayoutInflater mInflater;
     private View mCurrentView;
     private LinearLayout ll_head;
@@ -35,21 +33,16 @@ public class MyInfoView {
     private RelativeLayout rl_setting;
     private TextView tv_user_name;
 
-    public  MyInfoView(Context mContext){
-        this.mContext = mContext;
+    public  MyInfoView(Activity context){
+        mContext = context;
         mInflater = LayoutInflater.from(mContext);
     }
-
-    public View getView(){
-        if (mCurrentView == null){
-            createView();
-        }
-        return mCurrentView;
-    }
-
     private void createView() {
         initView();
     }
+
+
+
 
     private void initView(){
         mCurrentView = mInflater.inflate(R.layout.main_view_myinfo, null);
@@ -64,20 +57,20 @@ public class MyInfoView {
 
         ll_head.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 if (readLoginStatus()){
                     Intent intent = new Intent(mContext, UserInfoActivity.class);
                     mContext.startActivity(intent);
                 }else {
                     Intent intent = new Intent(mContext, LoginActivity.class);
-                    ((Activity) mContext).startActivityForResult(intent,1);
+                    mContext.startActivityForResult(intent,1);
                 }
             }
         });
 
         rl_course_history.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 if (readLoginStatus()){
 
                 }else {
@@ -87,10 +80,10 @@ public class MyInfoView {
         });
         rl_setting.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 if (readLoginStatus()){
                     Intent intent = new Intent(mContext, SettingActivity.class);
-                    ((Activity) mContext).startActivityForResult(intent,1);
+                     mContext.startActivityForResult(intent,1);
                 }else {
                     Toast.makeText(mContext,"你还未登录,请先登录",Toast.LENGTH_SHORT).show();
                 }
@@ -98,6 +91,12 @@ public class MyInfoView {
         });
     }
 
+    public View getView(){
+        if (mCurrentView == null){
+            createView();
+        }
+        return mCurrentView;
+    }
     public void setLoginParams(boolean isLogin) {
        if(isLogin){
            tv_user_name.setText(AnalysisUtils.readLoginUserName(mContext));
