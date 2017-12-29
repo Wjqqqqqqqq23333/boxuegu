@@ -2,7 +2,6 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.gdmec.edu.cn.boxuegu.R;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -10,7 +9,7 @@ import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-
+import cn.edu.gdmec.android.boxuegu.R;
 
 
 public class SettingActivity extends AppCompatActivity {

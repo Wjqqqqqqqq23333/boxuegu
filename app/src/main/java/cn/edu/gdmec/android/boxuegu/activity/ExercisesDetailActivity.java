@@ -1,6 +1,5 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
-import android.gdmec.edu.cn.boxuegu.R;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +13,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
+import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.adapter.ExercisesDetailAdapter;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;

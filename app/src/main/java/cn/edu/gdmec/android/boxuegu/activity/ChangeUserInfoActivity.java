@@ -1,7 +1,6 @@
 package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
-import android.gdmec.edu.cn.boxuegu.R;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,6 +14,8 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import cn.edu.gdmec.android.boxuegu.R;
 
 public class ChangeUserInfoActivity extends AppCompatActivity {
 

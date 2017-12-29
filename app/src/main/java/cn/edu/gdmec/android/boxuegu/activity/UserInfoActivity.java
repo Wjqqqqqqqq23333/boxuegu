@@ -2,6 +2,8 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+
+import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.bean.UserBean;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
@@ -9,7 +11,6 @@ import android.graphics.Color;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.gdmec.edu.cn.boxuegu.R;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.RelativeLayout;

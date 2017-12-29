@@ -2,6 +2,8 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.SharedPreferences;
+
+import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.utils.MD5Utils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,7 +14,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import android.gdmec.edu.cn.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 public class ModifyPswActivity extends AppCompatActivity {

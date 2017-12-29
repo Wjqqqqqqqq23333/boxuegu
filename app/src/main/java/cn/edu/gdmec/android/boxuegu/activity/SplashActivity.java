@@ -5,7 +5,8 @@ import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import cn.edu.gdmec.android.boxuegu.MainActivity;
-import android.gdmec.edu.cn.boxuegu.R;
+import cn.edu.gdmec.android.boxuegu.R;
+
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="android.gdmec.edu.cn.boxuegu">
+          package="cn.edu.gdmec.android.boxuegu">
 
     <application
         android:allowBackup="true"
