@@ -1,4 +1,4 @@
-package android.gdmec.edu.cn.boxuegu.activity;
+package cn.cn.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.graphics.Color;

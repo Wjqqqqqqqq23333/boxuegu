@@ -1,20 +1,19 @@
-package android.gdmec.edu.cn.boxuegu.view;
+package cn.cn.gdmec.android.boxuegu.view;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.gdmec.edu.cn.boxuegu.R;
-import android.gdmec.edu.cn.boxuegu.activity.LoginActivity;
-import android.gdmec.edu.cn.boxuegu.activity.SettingActivity;
-import android.gdmec.edu.cn.boxuegu.activity.UserInfoActivity;
-import android.gdmec.edu.cn.boxuegu.utils.AnalysisUtils;
+import cn.cn.gdmec.android.boxuegu.activity.LoginActivity;
+import cn.cn.gdmec.android.boxuegu.activity.SettingActivity;
+import cn.cn.gdmec.android.boxuegu.activity.UserInfoActivity;
+import cn.cn.gdmec.android.boxuegu.utils.AnalysisUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
-import android.widget.StackView;
 import android.widget.TextView;
 import android.widget.Toast;
 

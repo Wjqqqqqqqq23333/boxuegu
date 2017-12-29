@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="android.gdmec.edu.cn.boxuegu.activity.ModifyPswActivity">
+    tools:context="android.gdmec.edu.cn.boxuegu.cn.gdmec.edu.cn.boxuegu.activity.ModifyPswActivity">
     <include layout="@layout/main_title_bar"></include>
     <EditText
         android:id="@+id/et_original_psw"

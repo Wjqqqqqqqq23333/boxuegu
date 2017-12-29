@@ -1,4 +1,4 @@
-package android.gdmec.edu.cn.boxuegu.sqlite;
+package cn.cn.gdmec.android.boxuegu.sqlite;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
