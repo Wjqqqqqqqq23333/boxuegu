@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#eeeeee"
-    android:orientation="vertical"
-    tools:context="android.gdmec.edu.cn.boxuegu.cn.gdmec.edu.cn.boxuegu.activity.ChangeUserInfoActivity">
+    android:id="@+id/activity_change_user_info"
+    android:background="#eee"
+    tools:context="cn.edu.gdmec.android.boxuegu.activity.ChangeUserInfoActivity">
+
 
     <include layout="@layout/main_title_bar"></include>
 

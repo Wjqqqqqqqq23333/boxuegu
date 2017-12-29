@@ -1,10 +1,10 @@
-package cn.cn.gdmec.android.boxuegu.activity;
+package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
+import android.gdmec.edu.cn.boxuegu.R;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.gdmec.edu.cn.boxuegu.R;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextUtils;

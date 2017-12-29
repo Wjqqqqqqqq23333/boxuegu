@@ -1,10 +1,10 @@
-package cn.cn.gdmec.android.boxuegu.activity;
+package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
-import cn.cn.gdmec.android.boxuegu.MainActivity;
+import cn.edu.gdmec.android.boxuegu.MainActivity;
 import android.gdmec.edu.cn.boxuegu.R;
 import android.os.Bundle;
 import android.support.annotation.Nullable;

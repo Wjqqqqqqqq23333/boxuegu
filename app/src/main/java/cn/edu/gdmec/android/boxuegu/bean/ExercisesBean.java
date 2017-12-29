@@ -1,4 +1,4 @@
-package cn.cn.gdmec.android.boxuegu.bean;
+package cn.edu.gdmec.android.boxuegu.bean;
 
 /**
  * Created by ASUS PRO on 2017/12/25.

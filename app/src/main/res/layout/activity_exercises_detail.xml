@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@android:color/white"
-    tools:context="cn.cn.gdmec.android.boxuegu.activity.ExercisesDetailActivity">
+    tools:context="cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity">
 
     <include layout="@layout/main_title_bar"></include>
 

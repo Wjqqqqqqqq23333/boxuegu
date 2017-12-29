@@ -1,4 +1,4 @@
-package cn.cn.gdmec.android.boxuegu.utils;
+package cn.edu.gdmec.android.boxuegu.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -11,7 +11,7 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.cn.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
 /**
  * Created by student on 17/12/26.
@@ -79,5 +79,4 @@ public class AnalysisUtils {
         iv_c.setEnabled(value);
         iv_d.setEnabled(value);
     }
-
 }

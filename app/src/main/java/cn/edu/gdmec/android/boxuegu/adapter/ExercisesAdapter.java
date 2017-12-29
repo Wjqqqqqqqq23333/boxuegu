@@ -1,4 +1,4 @@
-package cn.cn.gdmec.android.boxuegu.adapter;
+package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,8 +11,8 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import cn.cn.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
-import cn.cn.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
+import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
 /**
  * Created by ASUS PRO on 2017/12/25.

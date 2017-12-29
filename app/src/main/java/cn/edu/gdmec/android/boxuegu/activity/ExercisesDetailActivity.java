@@ -1,4 +1,4 @@
-package cn.cn.gdmec.android.boxuegu.activity;
+package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.gdmec.edu.cn.boxuegu.R;
 import android.graphics.Color;
@@ -14,9 +14,9 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.cn.gdmec.android.boxuegu.adapter.ExercisesDetailAdapter;
-import cn.cn.gdmec.android.boxuegu.bean.ExercisesBean;
-import cn.cn.gdmec.android.boxuegu.utils.AnalysisUtils;
+import cn.edu.gdmec.android.boxuegu.adapter.ExercisesDetailAdapter;
+import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 
 public class ExercisesDetailActivity extends AppCompatActivity {

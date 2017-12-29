@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/register_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="android.gdmec.edu.cn.boxuegu.cn.gdmec.edu.cn.boxuegu.activity.ModifyPswActivity">
-    <include layout="@layout/main_title_bar"></include>
+    tools:context="cn.edu.gdmec.android.boxuegu.activity.ModifyPswActivity">
+    <include layout="@layout/main_title_bar">
+    </include>
     <EditText
         android:id="@+id/et_original_psw"
         android:layout_gravity="center_horizontal"
@@ -26,7 +26,7 @@
         android:textColorHint="#a3a3a3"
         android:textSize="14sp"
         android:layout_width="fill_parent"
-        android:layout_height="48dp" />
+        android:layout_height="48dp"/>
 
     <EditText
         android:id="@+id/et_new_psw"
@@ -44,8 +44,7 @@
         android:textColorHint="#a3a3a3"
         android:textSize="14sp"
         android:layout_width="fill_parent"
-        android:layout_height="48dp" />
-
+        android:layout_height="48dp"/>
     <EditText
         android:id="@+id/et_new_psw_again"
         android:layout_gravity="center_horizontal"
@@ -62,8 +61,8 @@
         android:textColorHint="#a3a3a3"
         android:textSize="14sp"
         android:layout_width="fill_parent"
-        android:layout_height="48dp" />
-    
+        android:layout_height="48dp"/>
+
     <Button
         android:id="@+id/btn_save"
         android:layout_gravity="center_horizontal"
@@ -75,5 +74,5 @@
         android:layout_marginRight="35dp"
         android:background="@drawable/register_selector"
         android:layout_width="fill_parent"
-        android:layout_height="40dp" />
+        android:layout_height="40dp"/>
 </LinearLayout>

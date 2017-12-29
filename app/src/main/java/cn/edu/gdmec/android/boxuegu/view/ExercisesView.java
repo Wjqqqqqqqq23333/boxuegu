@@ -1,4 +1,4 @@
-package cn.cn.gdmec.android.boxuegu.view;
+package cn.edu.gdmec.android.boxuegu.view;
 
 import android.app.Activity;
 import android.gdmec.edu.cn.boxuegu.R;
@@ -9,8 +9,8 @@ import android.widget.ListView;
 import java.util.ArrayList;
 import java.util.List;
 
-import cn.cn.gdmec.android.boxuegu.adapter.ExercisesAdapter;
-import cn.cn.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.adapter.ExercisesAdapter;
+import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
 /**
  * Created by student on 17/12/26.
