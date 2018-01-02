@@ -8,17 +8,16 @@ import android.database.sqlite.SQLiteOpenHelper;
  * Created by student on 17/12/27.
  */
 
-public class SQLiteHelper extends SQLiteOpenHelper {
-
-    public static final int DB_VERSION = 1;
+public class SQLiteHelper extends SQLiteOpenHelper{
+    private static final int DB_VERSION = 1;
     public static final String DB_NAME = "bxg.db";
     public static final String U_USERINFO = "userinfo";
+    public static final String U_VIDEO_PLAY_LIST = "videoplaylist";
 
     public SQLiteHelper(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
-    //创建数据库
     @Override
     public void onCreate(SQLiteDatabase db) {
         //创建个人信息表
@@ -26,16 +25,26 @@ public class SQLiteHelper extends SQLiteOpenHelper {
                 + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
                 + "userName VARCHAR, "
                 + "nickName VARCHAR, "
-                + "sex VARCHAR, "
+                +  "sex VARCHAR, "
                 + "signature VARCHAR"
+                + ")" );
+
+        //创建视频播放记录表
+        db.execSQL("CREATE TABLE IF NOT EXISTS " + U_VIDEO_PLAY_LIST + "( "
+                + "_id INTEGER PRIMARY KEY AUTOINCREMENT, "
+                + "userName VARCHAR, "
+                + "chapterId Int, "
+                +  "videoId VARCHAR, "
+                + "videoPath VARCHAR, "
+                + "title VARCHAR, "
+                + "secondTitle VARCHAR "
                 + ")" );
     }
 
-
-    //更新数据库
     @Override
-    public void onUpgrade(SQLiteDatabase db, int i, int i1) {
-        db.execSQL("DROP TABLE IF EXISIS " + U_USERINFO);
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL( "DROP TABLE IF EXISTS " + U_USERINFO );
+        db.execSQL( "DROP TABLE IF EXISTS " + U_VIDEO_PLAY_LIST );
         onCreate(db);
     }
 }

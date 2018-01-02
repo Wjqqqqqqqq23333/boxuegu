@@ -3,14 +3,13 @@ package cn.edu.gdmec.android.boxuegu.activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import cn.edu.gdmec.android.boxuegu.R;
-
 
 public class SettingActivity extends AppCompatActivity {
 
@@ -46,7 +45,7 @@ public class SettingActivity extends AppCompatActivity {
         rl_modify_psw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //TODO:跳转到修改密码的界面
+               //TODO:跳转到修改密码的界面
                 Intent intent = new Intent(SettingActivity.this,ModifyPswActivity.class);
                 startActivity(intent);
             }

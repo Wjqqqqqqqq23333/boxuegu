@@ -19,7 +19,6 @@ import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
 
 
-
 public class ExercisesDetailActivity extends AppCompatActivity {
 
     private Integer id;

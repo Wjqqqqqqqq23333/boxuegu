@@ -2,8 +2,8 @@ package cn.edu.gdmec.android.boxuegu.activity;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.Selection;
 import android.text.TextUtils;
@@ -23,33 +23,36 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
     private String content;
     private int flag;
     private TextView tv_back;
-    private TextView tv_save;
-    private ImageView iv_delect;
+    private ImageView iv_delete;
     private EditText et_content;
+    private TextView tv_main_title;
+    private RelativeLayout rl_title_bar;
+    private TextView tv_save;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_change_user_info);
-
         init();
     }
 
     private void init() {
-        //从个人资料界面传递过来的标题和内容
+        //从userinfo界面传过来的值
         title = getIntent().getStringExtra("title");
         content = getIntent().getStringExtra("content");
         flag = getIntent().getIntExtra("flag", 0);
 
+
         tv_back = (TextView) findViewById(R.id.tv_back);
-        TextView tv_main_title = (TextView) findViewById(R.id.tv_main_title);
-        tv_main_title.setText("title");
-        RelativeLayout rl_title_bar = (RelativeLayout) findViewById(R.id.title_bar);
+        tv_main_title = (TextView) findViewById(R.id.tv_main_title);
+        tv_main_title.setText(title);
+        rl_title_bar = (RelativeLayout) findViewById(R.id.title_bar);
         rl_title_bar.setBackgroundColor(Color.parseColor("#30B4FF"));
 
         tv_save = (TextView) findViewById(R.id.tv_save);
         tv_save.setVisibility(View.VISIBLE);
-        iv_delect = (ImageView) findViewById(R.id.iv_delect);
+
+        iv_delete = (ImageView) findViewById(R.id.iv_delect);
         et_content = (EditText) findViewById(R.id.et_content);
         if (!TextUtils.isEmpty(content)){
             et_content.setText(content);
@@ -62,7 +65,7 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                 ChangeUserInfoActivity.this.finish();
             }
         });
-        iv_delect.setOnClickListener(new View.OnClickListener() {
+        iv_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 et_content.setText("");
@@ -76,31 +79,35 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
                 switch (flag){
                     case 1:
                         if (!TextUtils.isEmpty(etContent)){
-                            data.putExtra("nickName", etContent);
+                            data.putExtra("nickName",etContent);
                             setResult(RESULT_OK,data);
                             Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
                             ChangeUserInfoActivity.this.finish();
-                        }else {
-                            Toast.makeText(ChangeUserInfoActivity.this,"呢称不能为空",Toast.LENGTH_SHORT).show();
+                        }else{
+                            Toast.makeText(ChangeUserInfoActivity.this,"昵称不能为空",Toast.LENGTH_SHORT).show();
                         }
                         break;
                     case 2:
                         if (!TextUtils.isEmpty(etContent)){
-                            data.putExtra("signature", etContent);
+                            data.putExtra("signature",etContent);
                             setResult(RESULT_OK,data);
                             Toast.makeText(ChangeUserInfoActivity.this,"保存成功",Toast.LENGTH_SHORT).show();
                             ChangeUserInfoActivity.this.finish();
-                        }else {
+                        }else{
                             Toast.makeText(ChangeUserInfoActivity.this,"签名不能为空",Toast.LENGTH_SHORT).show();
                         }
                         break;
                 }
             }
         });
-    }
 
-    //监听个人资料修改界面的输入文字
+
+
+    }/*
+    */
+    //监听个人资料修改的文字
     private void contentListener() {
+
         et_content.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -110,49 +117,61 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
-                Editable editable = et_content.getText();
-                int len = editable.length();
+                Editable text = et_content.getText();
+                int len = text.length();
                 if (len>0){
-                    iv_delect.setVisibility(View.VISIBLE);
-                }else {
-                    iv_delect.setVisibility(View.GONE);
+                    iv_delete.setVisibility(View.VISIBLE);
+                }else{
+                    iv_delete.setVisibility(View.GONE);
                 }
+
                 switch (flag){
-                    case 1://呢称不能超过8个字符，超过的截取掉
-                        if (len>8){
-                            int selEndIndex = Selection.getSelectionEnd(editable);
-                            String str = editable.toString();
-                            String newStr = str.substring(0, 8);
-                            et_content.setText(newStr);
-                            editable = et_content.getText();
-                            int newLen = editable.length();
-                            if (selEndIndex > newLen){
-                                selEndIndex = editable.length();
+                    case  1:
+                        if(len>8){
+                            int selEndIndex = Selection.getSelectionEnd(text);
+                            String str = text.toString();
+
+                            String newstr = str.substring(0,8);
+                            et_content.setText(newstr);
+                            text = et_content.getText();
+
+                            int newlen = text.length();
+
+                            if(selEndIndex>newlen){
+                                selEndIndex = text.length();
                             }
-                            //设置新光标所在的位置
-                            Selection.setSelection(editable,selEndIndex);
+
+                            //设置新光标所在位置
+                            Selection.setSelection(text,selEndIndex);
+
                         }
                         break;
+                    //签名类似处理
 
-                    case 2://签名不能超过16个字符，超过的截取掉
-                        if (len>16){
-                            int selEndIndex = Selection.getSelectionEnd(editable);
-                            String str = editable.toString();
-                            String newStr = str.substring(0, 16);
-                            et_content.setText(newStr);
-                            editable = et_content.getText();
-                            int newLen = editable.length();
-                            if (selEndIndex > newLen){
-                                selEndIndex = editable.length();
+                    case  2:
+                        if(len>16){
+                            int selEndIndex = Selection.getSelectionEnd(text);
+                            String str = text.toString();
+
+                            String newstr = str.substring(0,16);
+                            et_content.setText(newstr);
+                            text = et_content.getText();
+
+                            int newlen = text.length();
+
+                            if(selEndIndex>newlen){
+                                selEndIndex = text.length();
                             }
-                            //设置新光标所在的位置
-                            Selection.setSelection(editable,selEndIndex);
+
+                            //设置新光标所在位置
+                            Selection.setSelection(text,selEndIndex);
+
                         }
                         break;
                     default:
                         break;
-
                 }
+
             }
 
             @Override
@@ -160,6 +179,8 @@ public class ChangeUserInfoActivity extends AppCompatActivity {
 
             }
         });
-        //1
+
     }
+
+
 }

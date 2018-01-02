@@ -1,7 +1,6 @@
 package cn.edu.gdmec.android.boxuegu.view;
 
 import android.app.Activity;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.ListView;
@@ -13,7 +12,9 @@ import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.adapter.ExercisesAdapter;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
 
-
+/**
+ * Created by student on 17/12/26.
+ */
 
 public class ExercisesView {
 
@@ -22,11 +23,10 @@ public class ExercisesView {
     private View mCurrentView;
     private List<ExercisesBean> eb1;
 
-    public ExercisesView(Activity context){
+    public  ExercisesView(Activity context){
         mContext = context;
         mInflater = LayoutInflater.from(mContext);
     }
-
     
     public View getView(){
         if (mCurrentView == null){

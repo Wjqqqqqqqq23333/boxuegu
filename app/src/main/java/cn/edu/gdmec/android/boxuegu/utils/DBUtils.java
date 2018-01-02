@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.bean.UserBean;
 import cn.edu.gdmec.android.boxuegu.bean.VideoBean;
@@ -21,7 +20,7 @@ public class DBUtils {
     private static SQLiteDatabase db;
     private static DBUtils instance = null;
     public DBUtils(Context context) {
-        helper = new SQLiteHelper (context);
+        helper = new SQLiteHelper(context);
         db = helper.getWritableDatabase();
     }
 
