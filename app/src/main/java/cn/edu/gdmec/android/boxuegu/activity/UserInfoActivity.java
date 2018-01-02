@@ -74,7 +74,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
         rl_sex = (RelativeLayout) findViewById(R.id.rl_sex);
         tv_sex = (TextView) findViewById(R.id.tv_sex);
 
-        rl_signature = (RelativeLayout) findViewById(R.id.rl_signature);
+        rl_signature = (RelativeLayout) findViewById(R.id.rl_singature);
         tv_signature = (TextView) findViewById(R.id.tv_signature);
     }
 
@@ -122,7 +122,7 @@ public class UserInfoActivity extends AppCompatActivity implements View.OnClickL
                 String sex = tv_sex.getText().toString();
                 sexDialog(sex);
                 break;
-            case R.id.rl_signature://签名的点击事件
+            case R.id.rl_singature://签名的点击事件
                 String signature = tv_signature.getText().toString();
                 Bundle bdSignature = new Bundle();
                 bdSignature.putString("content",signature);//传递界面上的呢称数据

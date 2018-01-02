@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 
 
+import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
+import cn.edu.gdmec.android.boxuegu.view.ExercisesView;
 import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
 import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
@@ -164,6 +166,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private MyInfoView mMyInfoView;
+    private ExercisesView mExercisesView;
 
     private void createView(int ViewIndex) {
         switch (ViewIndex){
@@ -171,6 +174,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 //TODO：课程界面 
                 break;
             case 1:
+                if (mExercisesView == null){
+                    mExercisesView = new ExercisesView(this);
+                    mBodyLayout.addView(mExercisesView.getView());
+                }else {
+                    mExercisesView.getView();
+                }
+                mExercisesView.showView();
                 //习题界面
                 break;
             case 2:

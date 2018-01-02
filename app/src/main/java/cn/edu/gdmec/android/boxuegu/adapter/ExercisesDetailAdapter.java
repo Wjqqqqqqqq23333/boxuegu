@@ -1,7 +1,6 @@
 package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +26,7 @@ public class ExercisesDetailAdapter extends BaseAdapter {
 
 
 
-    public ExercisesDetailAdapter(Context mContext, OnSelectListener onSelectListener){
+    public ExercisesDetailAdapter(Context mContext,OnSelectListener onSelectListener){
         this.mContext = mContext;
         this.onSelectListener = onSelectListener;
     }
