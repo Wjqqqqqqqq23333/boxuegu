@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 
 
 import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
+import cn.edu.gdmec.android.boxuegu.view.CourseView;
 import cn.edu.gdmec.android.boxuegu.view.ExercisesView;
 import cn.edu.gdmec.android.boxuegu.view.MyInfoView;
 import android.graphics.Color;
@@ -161,17 +162,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 iv_myinfo.setImageResource(R.drawable.main_my_icon_selected);
                 tv_myinfo.setTextColor(Color.parseColor("#0097f7"));
                 rl_title_bar.setVisibility(View.VISIBLE);
+                tv_main_title.setText("博学谷");
                 break;
         }
     }
-
+    private CourseView mCourseView;
     private MyInfoView mMyInfoView;
     private ExercisesView mExercisesView;
 
     private void createView(int ViewIndex) {
         switch (ViewIndex){
             case 0:
-                //TODO：课程界面 
+                if (mCourseView == null){
+                    mCourseView = new CourseView(this);
+                    mBodyLayout.addView(mCourseView.getView());
+                }else{
+                    mCourseView.getView();
+                }
+                mCourseView.showView();
                 break;
             case 1:
                 if (mExercisesView == null){
