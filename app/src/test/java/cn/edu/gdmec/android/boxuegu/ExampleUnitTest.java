@@ -1,4 +1,4 @@
-package android.gdmec.edu.cn.boxuegu;
+package cn.edu.gdmec.android.boxuegu;
 
 import org.junit.Test;
 
