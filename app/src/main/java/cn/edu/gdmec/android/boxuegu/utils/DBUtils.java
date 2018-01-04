@@ -7,6 +7,7 @@ import android.database.sqlite.SQLiteDatabase;
 
 import java.util.ArrayList;
 
+import cn.edu.gdmec.android.boxuegu.adapter.ExercisesAdapter;
 import cn.edu.gdmec.android.boxuegu.bean.UserBean;
 import cn.edu.gdmec.android.boxuegu.bean.VideoBean;
 import cn.edu.gdmec.android.boxuegu.sqlite.SQLiteHelper;

@@ -128,4 +128,10 @@ public class AnalysisUtils {
         }
         return courseInfos;
     }
+
+    public static boolean readLoginStatus(Context context){
+        SharedPreferences sp =context.getSharedPreferences("loginInfo",Context.MODE_APPEND);
+        boolean isLogin = sp.getBoolean("isLogin",false);
+        return isLogin;
+    }
 }

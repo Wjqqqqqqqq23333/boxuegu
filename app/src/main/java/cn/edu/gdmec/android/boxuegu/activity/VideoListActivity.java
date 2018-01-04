@@ -81,12 +81,17 @@ public class VideoListActivity extends AppCompatActivity implements View.OnClick
                     if (readLoginStatus()){
                         String userName = AnalysisUtils.readLoginUserName(VideoListActivity.this);
                         db.saveVideoList(videoList.get(position),userName);
+                        //跳转到视频播放界面
+                        Intent intent = new Intent(VideoListActivity.this,VideoPlayActivity.class);
+                        intent.putExtra("videoPath",videoPath);
+                        intent.putExtra("position",position);
+                        startActivityForResult(intent,1);
+                    }else{
+                        Toast.makeText(VideoListActivity.this,"您还未登陆，请先登陆",Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(VideoListActivity.this, LoginActivity.class);
+                        VideoListActivity.this.startActivity(intent);
                     }
-                    //跳转到视频播放界面
-                    Intent intent = new Intent(VideoListActivity.this,VideoPlayActivity.class);
-                    intent.putExtra("videoPath",videoPath);
-                    intent.putExtra("position",position);
-                    startActivityForResult(intent,1);
+
                 }
             }
         });

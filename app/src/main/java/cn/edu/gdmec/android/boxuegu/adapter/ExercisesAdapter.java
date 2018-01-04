@@ -2,25 +2,34 @@ package cn.edu.gdmec.android.boxuegu.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.List;
 
 import cn.edu.gdmec.android.boxuegu.R;
 import cn.edu.gdmec.android.boxuegu.activity.ExercisesDetailActivity;
+import cn.edu.gdmec.android.boxuegu.activity.LoginActivity;
+import cn.edu.gdmec.android.boxuegu.activity.VideoListActivity;
 import cn.edu.gdmec.android.boxuegu.bean.ExercisesBean;
+import cn.edu.gdmec.android.boxuegu.utils.AnalysisUtils;
+import cn.edu.gdmec.android.boxuegu.utils.DBUtils;
 
 /**
  * Created by ASUS PRO on 2017/12/25.
  */
 
+
 public class ExercisesAdapter extends BaseAdapter {
 
+
     private Context mContext;
+    private DBUtils db;
 
     public ExercisesAdapter(Context mContext){
         this.mContext = mContext;
@@ -70,17 +79,25 @@ public class ExercisesAdapter extends BaseAdapter {
             vh.content.setText(bean.content);
             vh.order.setBackgroundResource(bean.background);
         }
+
         convertView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (bean == null){
+                if (bean == null) {
                     return;
                 }
                 //跳转到详情页
-                Intent intent = new Intent(mContext, ExercisesDetailActivity.class);
-                intent.putExtra("id",bean.id);
-                intent.putExtra("title",bean.title);
-                mContext.startActivity(intent);
+                if (AnalysisUtils.readLoginStatus(mContext)){
+                    Intent intent = new Intent(mContext, ExercisesDetailActivity.class);
+                    intent.putExtra("id",bean.id);
+                    intent.putExtra("title",bean.title);
+                    mContext.startActivity(intent);
+                }else{
+                    Toast.makeText(mContext,"您还未登陆，请先登陆",Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(mContext, LoginActivity.class);
+                    mContext.startActivity(intent);
+                }
+
             }
         });
         return convertView;
@@ -90,4 +107,5 @@ public class ExercisesAdapter extends BaseAdapter {
         public TextView title,content;
         public TextView order;
     }
+
 }

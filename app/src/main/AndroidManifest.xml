@@ -28,6 +28,7 @@
         <activity android:name=".activity.VideoListActivity" />
         <activity android:name=".activity.VideoPlayActivity" />
         <activity android:name=".activity.PlayHistoryActivity"></activity>
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     </application>
 
 </manifest>
